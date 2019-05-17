@@ -7,7 +7,7 @@ const msp = state => ({
 })
 
 const mdp = dispatch => ({
-  fetchBenches: () => dispatch(fetchBenches())
+  fetchBenches: (filters) => dispatch(fetchBenches(filters))
 })
 
 export default connect(msp, mdp)(BenchIndex);
