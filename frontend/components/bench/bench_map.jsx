@@ -30,7 +30,7 @@ class BenchMap extends React.Component {
         }
       }
       
-      this.props.updateBounds(mapBounds);
+      this.props.updateBounds({ bounds: mapBounds });
 
       // console.log('center',
       //   bounds.getCenter().lat(),

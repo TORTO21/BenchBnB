@@ -4,7 +4,8 @@ import { updateBounds } from '../../actions/filter_actions'
 import Search from './search'
 
 const msp = state => ({
-  benches: Object.values(state.entities.benches)
+  benches: Object.values(state.entities.benches),
+  bounds: state.ui.filters.bounds
 })
 
 const mdp = dispatch => ({
