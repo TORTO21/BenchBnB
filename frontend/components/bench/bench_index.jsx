@@ -6,8 +6,9 @@ class BenchIndex extends React.Component {
     this.props.bounds ? this.props.fetchBenches({ bounds: this.props.bounds }) : null
   }
 
-  componentDidUpdate() {
-    this.props.bounds ? this.props.fetchBenches({ bounds: this.props.bounds }) : null
+  componentDidUpdate(prevProps) {
+    if (this.props.bounds && this.props.bounds !== prevProps.bounds)
+      this.props.fetchBenches({ bounds: this.props.bounds })
   }
 
   render() {

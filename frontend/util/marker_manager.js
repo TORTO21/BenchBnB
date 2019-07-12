@@ -8,11 +8,23 @@ export default class MarkerManager {
   
   updateMarkers(benches) {
     // console.log('time to update');
+    let benchesObj = new Object
+    benches.forEach(bench => {
+      benchesObj[bench.id] = bench
+    })
+
+    debugger
+
     benches.forEach(bench => {
       if (!Object.keys(this.markers).includes(bench.id)) {
         this.markers[bench.id] = this.createMarkerFromBench(bench)
       }
     })
+  }
+
+  removeMarker(marker) {
+    marker.setMap(null)
+
   }
 
   createMarkerFromBench(bench) {
